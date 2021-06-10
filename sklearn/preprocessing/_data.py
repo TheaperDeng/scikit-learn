@@ -882,6 +882,9 @@ class StandardScaler(TransformerMixin, BaseEstimator):
         else:
             self.scale_ = None
 
+        if not self.with_mean:
+            self.mean_ = None
+
         return self
 
     def transform(self, X, copy=None):
